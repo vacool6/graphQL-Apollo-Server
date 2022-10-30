@@ -1,6 +1,7 @@
 const { v4: uuid } = require("uuid");
 
 exports.Mutation = {
+  //CREATE
   addCategory: (parent, { input }, { db }) => {
     const { name } = input;
     const newCategory = {
@@ -43,6 +44,8 @@ exports.Mutation = {
     return newReview;
   },
 
+  //DELETE
+
   deleteCategory: (parent, { id }, { db }) => {
     db.categories = db.categories.filter((category) => category.id !== id);
     return "Successfully deleted category!";
@@ -59,5 +62,39 @@ exports.Mutation = {
     db.reviews = db.reviews.filter((rev) => rev.id !== id);
     console.log(db.reviews);
     return true;
+  },
+
+  //UPDATE
+
+  updateCategory: (parent, { id, input }, { db }) => {
+    const { name } = input;
+    const index = db.categories.findIndex((category) => category.id === id);
+    if (index === -1) return "Category does ont exists";
+
+    db.categories[index] = {
+      ...db.categories[index],
+      name,
+    };
+    return "Updated Category successfully!";
+  },
+
+  updateProduct: (parent, { id, input }, { db }) => {
+    const index = db.productList.findIndex((product) => product.id === id);
+    if (index === -1) return "Product does ont exists";
+    db.productList[index] = {
+      ...db.productList[index],
+      ...input,
+    };
+    return "Updated Product successfully!";
+  },
+
+  updateReview: (parent, { id, input }, { db }) => {
+    const index = db.reviews.findIndex((rev) => rev.id === id);
+    if (index === -1) return "Review does ont exists";
+    db.reviews[index] = {
+      ...db.reviews[index],
+      ...input,
+    };
+    return "Updated Review successfully!";
   },
 };
