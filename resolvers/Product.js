@@ -1,25 +1,23 @@
 exports.Product = {
-  category: (parent, arg, context) => {
-    const foundCategory = context.categories.find(
-      (e) => e.id === parent.categoryID
-    );
+  category: (parent, arg, { db }) => {
+    const foundCategory = db.categories.find((e) => e.id === parent.categoryID);
     return foundCategory;
   },
-  similarProducts: ({ categoryID, id }, arg, { productList }) => {
-    const similarProducts = productList.filter(
+  similarProducts: ({ categoryID, id }, arg, { db }) => {
+    const similarProducts = db.productList.filter(
       (product) => product.categoryID === categoryID
     );
     return similarProducts.filter((product) => product.id !== id);
   },
 
-  reviews: ({ id }, args, { reviews }) => {
-    const Revs = reviews.filter((rev) => rev.productID === id);
+  reviews: ({ id }, args, { db }) => {
+    const Revs = db.reviews.filter((rev) => rev.productID === id);
     if (Revs.length === 0) return null;
     return Revs;
   },
 
-  avgRatings: ({ id }, arg, { reviews }) => {
-    const allRevs = reviews.filter((rev) => rev.productID === id);
+  avgRatings: ({ id }, arg, { db }) => {
+    const allRevs = db.reviews.filter((rev) => rev.productID === id);
     if (allRevs.length === 0) return 0;
 
     let sum = 0;
