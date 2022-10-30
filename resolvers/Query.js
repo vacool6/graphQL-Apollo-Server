@@ -1,6 +1,14 @@
 exports.Query = {
   hello: () => "Here we go!",
-  products: (parent, args, context) => context.productList,
+  products: (parent, { filter }, context) => {
+    if (filter) {
+      const { onSale } = filter;
+      if (onSale) {
+        return context.productList.filter((product) => product.onSale === true);
+      }
+    }
+    return context.productList;
+  },
   product: (parent, args, { productList }) => {
     const product = productList.find((product) => product.id === args.id);
     if (product) return product;

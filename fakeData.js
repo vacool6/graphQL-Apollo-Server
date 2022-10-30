@@ -62,4 +62,49 @@ const categories = [
   },
 ];
 
-module.exports = { productList, categories };
+const reviews = [
+  {
+    id: "1",
+    productID: "ce3114a1-ff26-4736-871e-ad6362bf5c55",
+    date: "26/10/2022",
+    comment: "This is Awesome!",
+    rating: 5,
+  },
+  {
+    id: "2",
+    productID: "ce3114a1-ff26-4736-871e-ad6362bf5c55",
+    date: "26/10/2022",
+    comment: "Average",
+    rating: 2,
+  },
+  {
+    id: "3",
+    productID: "ce3114a1-ff26-4736-871e-ad6362bf5c55",
+    date: "26/10/2022",
+    comment: "3 from me",
+    rating: 3,
+  },
+  {
+    id: "4",
+    productID: "ce3114a1-ff26-4736-871e-ad6362bf5zwe",
+    date: "26/10/2022",
+    comment: "5 star",
+    rating: 5,
+  },
+  {
+    id: "5",
+    productID: "ce3114a1-ff26-4736-871e-ad6362bf5zwe",
+    date: "26/10/2022",
+    comment: "Great!",
+    rating: 5,
+  },
+  {
+    id: "6",
+    productID: "1344d658-fc47-49a5-866e-e617d39533a2",
+    date: "26/10/2022",
+    comment: "Great I can now play",
+    rating: 4,
+  },
+];
+
+module.exports = { productList, categories, reviews };

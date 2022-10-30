@@ -11,4 +11,21 @@ exports.Product = {
     );
     return similarProducts.filter((product) => product.id !== id);
   },
+
+  reviews: ({ id }, args, { reviews }) => {
+    const Revs = reviews.filter((rev) => rev.productID === id);
+    if (Revs.length === 0) return null;
+    return Revs;
+  },
+
+  avgRatings: ({ id }, arg, { reviews }) => {
+    const allRevs = reviews.filter((rev) => rev.productID === id);
+    if (allRevs.length === 0) return 0;
+
+    let sum = 0;
+    for (let ratings of allRevs) {
+      sum += ratings.rating;
+    }
+    return (sum / allRevs.length).toFixed(2);
+  },
 };
