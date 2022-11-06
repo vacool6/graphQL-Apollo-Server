@@ -1,22 +1,22 @@
 exports.Query = {
   hello: () => "Here we go!",
-  products: (parent, { filter }, context) => {
+  products: (parent, { filter }, { db }) => {
     if (filter) {
       const { onSale } = filter;
       if (onSale) {
-        return context.productList.filter((product) => product.onSale === true);
+        return db.productList.filter((product) => product.onSale === true);
       }
     }
-    return context.productList;
+    return db.productList;
   },
-  product: (parent, args, { productList }) => {
-    const product = productList.find((product) => product.id === args.id);
+  product: (parent, args, { db }) => {
+    const product = db.productList.find((product) => product.id === args.id);
     if (product) return product;
     return null;
   },
-  categories: (parent, args, { categories }) => categories,
-  category: (parent, { id }, { categories }) => {
-    const foundCategory = categories.find((e) => e.id === id);
+  categories: (parent, args, { db }) => db.categories,
+  category: (parent, { id }, { db }) => {
+    const foundCategory = db.categories.find((e) => e.id === id);
     if (foundCategory) return foundCategory;
     return null;
   },

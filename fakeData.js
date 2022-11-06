@@ -64,42 +64,42 @@ const categories = [
 
 const reviews = [
   {
-    id: "1",
+    id: "ce3114a1-ff26-4736-871e-ad6362bf5001",
     productID: "ce3114a1-ff26-4736-871e-ad6362bf5c55",
     date: "26/10/2022",
     comment: "This is Awesome!",
     rating: 5,
   },
   {
-    id: "2",
+    id: "ce3114a1-ff26-4736-871e-ad6362bf5002",
     productID: "ce3114a1-ff26-4736-871e-ad6362bf5c55",
     date: "26/10/2022",
     comment: "Average",
     rating: 2,
   },
   {
-    id: "3",
+    id: "ce3114a1-ff26-4736-871e-ad6362bf5003",
     productID: "ce3114a1-ff26-4736-871e-ad6362bf5c55",
     date: "26/10/2022",
     comment: "3 from me",
     rating: 3,
   },
   {
-    id: "4",
+    id: "ce3114a1-ff26-4736-871e-ad6362bf5004",
     productID: "ce3114a1-ff26-4736-871e-ad6362bf5zwe",
     date: "26/10/2022",
     comment: "5 star",
     rating: 5,
   },
   {
-    id: "5",
+    id: "ce3114a1-ff26-4736-871e-ad6362bf5005",
     productID: "ce3114a1-ff26-4736-871e-ad6362bf5zwe",
     date: "26/10/2022",
     comment: "Great!",
     rating: 5,
   },
   {
-    id: "6",
+    id: "ce3114a1-ff26-4736-871e-ad6362bf5006",
     productID: "1344d658-fc47-49a5-866e-e617d39533a2",
     date: "26/10/2022",
     comment: "Great I can now play",
@@ -107,4 +107,4 @@ const reviews = [
   },
 ];
 
-module.exports = { productList, categories, reviews };
+exports.db = { productList, categories, reviews };
