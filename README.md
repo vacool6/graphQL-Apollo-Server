@@ -5,7 +5,7 @@ In this peoject we query data using GraphQL using Apollo-Server library.
 
 ## Getting started
 
-1 ) Need to have nodejs insttalled.
+1 ) Need to have nodejs installed.
 
 2 ) Installing dependencies: `yarn or npm install or npm i`
 
