@@ -4,19 +4,21 @@ In this peoject we query data using GraphQL using Apollo-Server library.
 
 ## GQL vs REST
 
-### 1. Data fetching:
-REST: Pre-defined endpoints with fixed data structures.
-GraphQL: Flexible queries for custom data retrieval.
+#### 1. Data fetching:
+`REST`: Pre-defined endpoints with fixed data structures.
 
-### 2. Over-fetching/under-fetching:
-REST: Often leads to over-fetching (retrieving more data than needed) or under-fetching (requiring multiple requests).
-GraphQL: Allows clients to request only the data they need, reducing over-fetching and under-fetching.
+`GraphQL`: Flexible queries for custom data retrieval.
+
+#### 2. Over-fetching/under-fetching:
+`REST`: Often leads to over-fetching (retrieving more data than needed) or under-fetching (requiring multiple requests).
+
+`GraphQL`: Allows clients to request only the data they need, reducing over-fetching and under-fetching.
 without versioning, as clients specify their data requirements.
 
-### 3. Efficiency:
-REST: May involve multiple requests for related data.
-GraphQL: Single request can retrieve all required data.
+#### 3. Efficiency:
+`REST`: May involve multiple requests for related data.
 
+`GraphQL`: Single request can retrieve all required data.
 ## Getting started
 
 1 ) Need to have nodejs installed.
